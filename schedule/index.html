@@ -21,18 +21,20 @@
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="msapplication-TileImage" content="mstile-144x144.png" />
         
-        <link rel="stylesheet" href="/si_scy/assets/style-0bb4ab2df0585ab06c8a75b7c9563851.css">
-        <script src="/si_scy/assets/js-7a597a50df233fb1079d9a27886e943c.js"></script>
+        <link rel="stylesheet" href="/si_scy/assets/style-f758bdba422430dac366b2abd716a371.css">
+        <script src="/si_scy/assets/js-0552d57920d4ad906be077f38842b3c2.js"></script>
     </head>
     <body id="schedule" class="">
   <aside class="right-off-canvas-menu">
 	<ul class="off-canvas-list">
 		<li><label class="first">Scypho</label></li>
 		
-			<li>{{#link-to 'index'}}Hem{{/link-to}}</li>
-			<li>{{#link-to 'schedule'}}Schema{{/link-to}}</li>
-			<li>{{#link-to 'index2'}}Hem alt.{{/link-to}}</li>
+			<li>{{#link-to 'index'}}Logga in{{/link-to}}</li>
+			<li>{{#link-to 'schedule'}}Veckoschema{{/link-to}}</li>
+			<li>{{#link-to 'statistics'}}Historik{{/link-to}}</li>
 			<li><a href="#">Inställningar</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li>{{#link-to 'dashboard' class="js-show-intro"}}Hjälp{{/link-to}}</li>
 		
 	</ul>	
 </aside>
@@ -43,7 +45,7 @@
 	</a> -->
 	<section class="left-small hidden">
 		
-			{{#link-to 'index' class="icon-left-open-big"}}<span></span>{{/link-to}}
+			{{#link-to 'dashboard' class="icon-left-open"}}<span></span>{{/link-to}}
 		
 	</section>
 
@@ -73,9 +75,11 @@
 		<ul class="right">
 			
 				<li class="divider"></li>
-				<li>{{#link-to 'index'}}Hem{{/link-to}}</li>
+				<li>{{#link-to 'index'}}Logga in{{/link-to}}</li>
 				<li class="divider"></li>
 				<li>{{#link-to 'schedule'}}Schema{{/link-to}}</li>
+				<li class="divider"></li>
+				<li>{{#link-to 'statistics'}}Statistik{{/link-to}}</li>
 				<li class="divider"></li>
 				<li><a href="#" class="">Settings</a></li>
 			
@@ -201,19 +205,35 @@
 <div id="comf-zone-form" class="bottom-panel">
 	<div class="small-12 large-centered columns">
 		<h3>Måndag</h3>
-		<div class="row controls-from">
+		<div class="row controls-from" data-visible="new">
+	        <div class="small-2 columns">
+	          <label for="period-day" class="left inline">Dag</label>
+	        </div>
+	        <div class="small-10 columns">
+	        	<select name="period-day">
+	        	  <option value="1">Måndag</option>
+	        	  <option value="2">Tisdag</option>
+	        	  <option value="3">Onsdag</option>
+	        	  <option value="4">Torsdag</option>
+	        	  <option value="5">Fredag</option>
+	        	  <option value="6">Lördag</option>
+	        	  <option value="7">Söndag</option>
+	        	</select>
+	        </div>
+      	</div>
+		<div class="row controls-from" data-visible="all">
 	        <div class="small-2 columns">
 	          <label for="from-time" class="left inline">Från</label>
 	        </div>
 	        <div class="small-4 columns">
-	        	<input type="time" name="from-time" id="from-time">
+	        	<input type="time" name="from-time" id="from-time" value="06:30">
 	        </div>
 	        <div class="small-6 columns">
 	        	<span class="time-controls time-plus icon-plus-circled text-white"></span>
 	        	<span class="time-controls time-minus icon-minus-circled text-white"></span>
 	        </div>
       	</div>
-		<div class="row controls-from">
+		<div class="row controls-from" data-visible="all">
 	        <div class="small-2 columns">
 	          <label for="to-time" class="left inline">Till</label>
 	        </div>
@@ -233,6 +253,71 @@
 
 </div>
 
-						
+	<div class="help-overlay">
+	<!-- <div class="help-text temp-text small-12 large-6 small-centered columns ">
+		<p>Här ser du aktuella temperaturer i ditt hus</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text status-text small-12 large-6 small-centered columns ">
+		<p>Scypho status berättar vad Scypho gör just nu</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text home-mode-text small-12 large-6 small-centered columns ">
+		<p>Hemmaläge använder du när du tillfälligt behöver vara hemma</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text semester-mode-text small-12 large-6 small-centered columns ">
+		<p>Kopplar du in Bortrest så sparar du energi hela dygnet</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text schedule-text small-12 large-6 small-centered columns ">
+		<p>Det rullande veckoschemat är det som vanligen styr Scypho</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text comf-temp-text small-12 large-6 small-centered columns ">
+		<p>Här kan du ändra din Trivseltemperatur</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text stat-text small-12 large-6 small-centered columns ">
+		<p>Statistiken visar hur mycket du sparar</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text info-text small-12 large-6 small-centered columns ">
+		<p>Vill du se den här informationen igen, tryck här</p>
+		<span class="help-arrow"></span>
+	</div> -->
+	
+	<div class="help-text small-12 large-6 small-centered columns hp-text-1">
+		<p>Nästan klart!</p>
+	</div>
+
+	<div class="help-text small-12 large-6 small-centered columns hp-text-2">
+		<p>Ett rullande 
+		veckoschema styr 
+		när Scypho ger dig 
+		Trivseltemperatur eller
+		sparar energi.</p>
+	</div>
+
+	<div class="help-text small-12 large-6 small-centered columns hp-text-3">
+		<span class="help-arrow"></span>
+		<p>Scypho status
+		berättar vad Scypho 
+		gör just nu.</p>
+	</div>
+
+	<div class="help-text close-info-text small-12 large-6 small-centered columns text-centered">
+		<p class="js-close-intro">OK, kör igång!</p>
+	</div>
+	  
+</div>
+
     </body>
 </html>
