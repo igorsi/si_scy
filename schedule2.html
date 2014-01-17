@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Schedule</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+        
+        <link rel="apple-touch-icon" sizes="57x57" href="/si_scyapple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/si_scyapple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/si_scyapple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/si_scyapple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/si_scyapple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/si_scyapple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/si_scyapple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/si_scyapple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="/si_scyfavicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="/si_scyfavicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/si_scyfavicon-16x16.png" sizes="16x16" />
+        <meta name="msapplication-TileColor" content="#2d89ef" />
+        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+        
+        <link rel="stylesheet" href="/si_scy/assets/style-f758bdba422430dac366b2abd716a371.css">
+        <script src="/si_scy/assets/js-0552d57920d4ad906be077f38842b3c2.js"></script>
+    </head>
+    <body id="" class="">
+  <aside class="right-off-canvas-menu">
+	<ul class="off-canvas-list">
+		<li><label class="first">Scypho</label></li>
+		
+			<li>{{#link-to 'index'}}Logga in{{/link-to}}</li>
+			<li>{{#link-to 'schedule'}}Veckoschema{{/link-to}}</li>
+			<li>{{#link-to 'statistics'}}Historik{{/link-to}}</li>
+			<li><a href="#">Inställningar</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li>{{#link-to 'dashboard' class="js-show-intro"}}Hjälp{{/link-to}}</li>
+		
+	</ul>	
+</aside>
+
+<nav class="tab-bar show-for-small">
+	<!-- <a class="left-off-canvas-toggle menu-icon">
+		<span class="scy-icon-logo"></span>
+	</a> -->
+	<section class="left-small hidden">
+		
+			{{#link-to 'dashboard' class="icon-left-open"}}<span></span>{{/link-to}}
+		
+	</section>
+
+	<section class="middle tab-bar-section">
+
+	  	<h1 class="title scy-icon-logo"></h1>
+	  	<h1 class="title hiddem">Schedule</h1>
+	</section>
+
+	<section class="right-small">
+	  <a class="right-off-canvas-toggle icon-menu" ><span></span></a>
+	</section>
+</nav>
+
+<!--use Foundation top-bar element for all but small screens-->
+<nav class="top-bar hide-for-small" data-topbar>
+	<ul class="title-area">
+		<li class="name">
+
+			
+				{{#link-to 'index' class="scy-icon-logo"}}{{/link-to}}
+			
+		</li>
+	</ul>
+
+	<section class="top-bar-section">
+		<ul class="right">
+			
+				<li class="divider"></li>
+				<li>{{#link-to 'index'}}Logga in{{/link-to}}</li>
+				<li class="divider"></li>
+				<li>{{#link-to 'schedule'}}Schema{{/link-to}}</li>
+				<li class="divider"></li>
+				<li>{{#link-to 'statistics'}}Statistik{{/link-to}}</li>
+				<li class="divider"></li>
+				<li><a href="#" class="">Settings</a></li>
+			
+		</ul>
+	</section>
+</nav>						
+				
+<a class="exit-off-canvas" href="#"></a>
+<div id="main-content">
+  <!-- Main Grid Section -->
+      
+<div id="shedule" class="row margin-top">
+
+  <div class="small-8 large-6 large-centered small-centered columns">
+    <div class="comf-zone-wrap">
+      
+      <div class="comf-zone">
+        <div id="zone-from" class="comf-zone-from draggable"></div>
+        <div id="zone-to" class="comf-zone-to draggable"></div>
+      </div>
+      <div class="day-period"></div>
+    </div>
+
+  </div>      
+</div>
+
+<!-- Footer -->
+
+<footer class="row">
+  <div class="large-12 columns">
+    <!-- Footer content -->
+  </div>
+</footer>
+</div>
+	<div class="help-overlay">
+	<!-- <div class="help-text temp-text small-12 large-6 small-centered columns ">
+		<p>Här ser du aktuella temperaturer i ditt hus</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text status-text small-12 large-6 small-centered columns ">
+		<p>Scypho status berättar vad Scypho gör just nu</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text home-mode-text small-12 large-6 small-centered columns ">
+		<p>Hemmaläge använder du när du tillfälligt behöver vara hemma</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text semester-mode-text small-12 large-6 small-centered columns ">
+		<p>Kopplar du in Bortrest så sparar du energi hela dygnet</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text schedule-text small-12 large-6 small-centered columns ">
+		<p>Det rullande veckoschemat är det som vanligen styr Scypho</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text comf-temp-text small-12 large-6 small-centered columns ">
+		<p>Här kan du ändra din Trivseltemperatur</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text stat-text small-12 large-6 small-centered columns ">
+		<p>Statistiken visar hur mycket du sparar</p>
+		<span class="help-arrow"></span>
+	</div>
+
+	<div class="help-text info-text small-12 large-6 small-centered columns ">
+		<p>Vill du se den här informationen igen, tryck här</p>
+		<span class="help-arrow"></span>
+	</div> -->
+	
+	<div class="help-text small-12 large-6 small-centered columns hp-text-1">
+		<p>Nästan klart!</p>
+	</div>
+
+	<div class="help-text small-12 large-6 small-centered columns hp-text-2">
+		<p>Ett rullande 
+		veckoschema styr 
+		när Scypho ger dig 
+		Trivseltemperatur eller
+		sparar energi.</p>
+	</div>
+
+	<div class="help-text small-12 large-6 small-centered columns hp-text-3">
+		<span class="help-arrow"></span>
+		<p>Scypho status
+		berättar vad Scypho 
+		gör just nu.</p>
+	</div>
+
+	<div class="help-text close-info-text small-12 large-6 small-centered columns text-centered">
+		<p class="js-close-intro">OK, kör igång!</p>
+	</div>
+	  
+</div>
+
+    </body>
+</html>
