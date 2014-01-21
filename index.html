@@ -21,8 +21,8 @@
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="msapplication-TileImage" content="mstile-144x144.png" />
         
-        <link rel="stylesheet" href="/si_scy/assets/style-f758bdba422430dac366b2abd716a371.css">
-        <script src="/si_scy/assets/js-0552d57920d4ad906be077f38842b3c2.js"></script>
+        <link rel="stylesheet" href="/si_scy/assets/style-3e59466d181b55d57d960798400c0421.css">
+        <script src="/si_scy/assets/js-12549295bfecf29a087a94b82fea888d.js"></script>
     </head>
     <body id="home" class="">
 
@@ -41,12 +41,31 @@
 	<ul class="off-canvas-list">
 		<li><label class="first">Scypho</label></li>
 		
-			<li>{{#link-to 'index'}}Logga in{{/link-to}}</li>
-			<li>{{#link-to 'schedule'}}Veckoschema{{/link-to}}</li>
-			<li>{{#link-to 'statistics'}}Historik{{/link-to}}</li>
-			<li><a href="#">Inställningar</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li>{{#link-to 'dashboard' class="js-show-intro"}}Hjälp{{/link-to}}</li>
+			<li>{{#link-to 'login'}}
+			
+				Logga in
+			
+			{{/link-to}}</li>
+			<li>{{#link-to 'schedule'}}
+			
+				Veckoschema
+			
+			{{/link-to}}</li>
+			<li>{{#link-to 'statistics'}}
+			
+				Historik
+			
+			{{/link-to}}</li>
+			<li>{{#link-to 'settings'}}
+				
+					Inställningar
+				
+			{{/link-to}}</li>
+			<li>{{#link-to 'faq'}}
+				
+					FAQ
+				
+			{{/link-to}}</li>
 		
 	</ul>	
 </aside>
@@ -78,7 +97,7 @@
 		<li class="name">
 
 			
-				{{#link-to 'index' class="scy-icon-logo"}}{{/link-to}}
+				{{#link-to 'dashboard' class="scy-icon-logo"}}{{/link-to}}
 			
 		</li>
 	</ul>
@@ -87,13 +106,29 @@
 		<ul class="right">
 			
 				<li class="divider"></li>
-				<li>{{#link-to 'index'}}Logga in{{/link-to}}</li>
+				<li>{{#link-to 'login'}}
+				
+					Logga in
+				
+				{{/link-to}}</li>
 				<li class="divider"></li>
-				<li>{{#link-to 'schedule'}}Schema{{/link-to}}</li>
+				<li>{{#link-to 'schedule'}}
+				
+					Veckoschema
+				
+				{{/link-to}}</li>
 				<li class="divider"></li>
-				<li>{{#link-to 'statistics'}}Statistik{{/link-to}}</li>
+				<li>{{#link-to 'statistics'}}
+				
+					Historik
+				
+				{{/link-to}}</li>
 				<li class="divider"></li>
-				<li><a href="#" class="">Settings</a></li>
+				<li>{{#link-to 'settings'}}
+				
+					Inställningar
+				
+				{{/link-to}}</li>
 			
 		</ul>
 	</section>
@@ -118,53 +153,18 @@
 </div><!-- .off-canvas-wrap -->
 
 </script>
-	<script type="text/x-handlebars" data-template-name="index">
-</script>
+	<script type="text/x-handlebars" data-template-name="index"></script>
 <script type="text/x-handlebars" data-template-name="dashboard">
 
 <!-- Main Grid Section -->
 <div class="row margin-tb hidden">
   <div id="error-module" class="small-12 large-6 large-centered columns scy-module coral">
     <span class="icon-attention"></span>
-    <p>Scypho är offline
-      
-    
-      {{view.firstName}}
-    
-    </p>
+    <p>Scypho är offline</p>
   </div>     
 </div>
-<!-- 
-<div class="row margin-top">
-  <div id="sensors-module" class="small-12 large-6 large-centered columns scy-module yellow">
-    <span class="icon-home yellow"></span>
-      <div class="temp-wrap">
-        <div class="small-6 columns temp-blocks border-right">
-          <div class="border-bottom">
-            <span class="degree">20&deg;</span>
-            <p>Sovrum</p>
-          </div>
-        </div>
-        <div class="small-6 columns temp-blocks">
-          <div class="border-bottom">
-            <span class="degree">-5&deg;</span>
-            <p>Utomhus</p>
-          </div>
-        </div>
-        <div class="small-6 columns temp-blocks border-right">
-          <span class="degree">20&deg;</span>
-          <p>Kök</p>
-        </div>
-        <div class="small-6 columns temp-blocks">
-          <span class="degree">20&deg;</span>
-          <p>Medelvärde</p>
-        </div>
-        
-      </div>
 
-  </div>     
-</div> -->
-
+<!-- SENSORS MODULE -->
 <div class="row margin-top">
   <div id="sensors-module" class="scy-module small-12 large-6 large-centered columns yellow">
     <div class="row">
@@ -192,10 +192,7 @@
     </div>
 
     <div class="row margin-top">
-      <div class="small-12 columns extra-temp">
-        <!-- <div class="small-12 text-centered columns ">
-          <span class="degree">20.2&deg;</span><span class="subtitle">Sovrum 1</span>
-        </div> -->
+      <div class="small-11 small-centered columns extra-temp">
         <div class="row">
           <div class="small-6 text-centered columns ">
             <span class="degree">20.2&deg;</span><span class="subtitle">Sovrum</span>
@@ -210,77 +207,48 @@
 
   </div>     
 </div>
+<!-- /SENSORS MODULE -->
 
-<div class="row margin-tb">
-  <div id="status-module" class="small-12 large-6 large-centered columns scy-module green">
+<!-- STATUS MODULE -->
+<div class="row margin-tb hidden">
+  <div id="status-module-saving" class="status-module small-12 large-6 large-centered columns scy-module yellow">
     <span class="icon-leaf"></span>
-    <p class="small-12 title">Scypho status: Sparläge</p>
-    <p class="small-12 subtitle">Trivseltemperatur börjar om </p>
+    <p class="small-12 title border-bottom margin-bottom">Scypho status: Sparläge</p>
+    <p class="small-12 subtitle">Trivseltemperatur uppnås om</p>
     <p id="countdown" class="small-12 small-centered subtitle"></p>
 
-    <!-- <a href="#" onclick="javascript: return false;" class="button small-10 small-centered margin-top">Ok</a> -->
+    <!-- <a href="#" onclick="javascript: return false;" class="button small-10 small-centered margin-top">OK</a> -->
   </div>     
 </div>
-
 <div class="row margin-tb">
-  <div id="home-switch-module" class="small-12 large-6 large-centered columns scy-module blue">
-    <div class="row">
-      <span class="scy-icon-home-mode small-3 columns"></span>
+  <div id="status-module-comfort" class="status-module small-12 large-6 large-centered columns scy-module yellow">
+    <span class="icon-heart-empty"></span>
+    <p class="small-12 title border-bottom margin-bottom">Scypho status: Trivseltemperatur</p>
+    <p class="small-12 subtitle">Sparläge börjar om</p>
+    <p id="countdown2" class="small-12 small-centered subtitle"></p>
 
-      <label for="home-mode-switch" class="switch-light switch-ios small-8 text-left mode-switch columns end" onclick="">
-        <input type="checkbox" name="home-mode" id="home-mode-switch">
-        <span class="small-4 columns">
-          <span></span>
-          <span></span>
-
-          <a></a>
-        </span>
-
-
-        <p>Hemma</p>
-        <p>Hemma</p>
-      </label>
-    </div>
-    
-
-    <div class="row hidden slide-down">
-      <div class="small-12 columns">
-        
-        <p class="text-centered">Hemma till 23:00</p>
-
-        <a href="#" title="" onclick="javascript: return false;"  class="show-adv-mode button small-10 small-centered columns margin-top">Ändra tid</a>
-        <div class="row advanced-mode hidden">
-          <label for="home-start-date" class="small-12 columns">
-            <div class="row">
-              <p class="small-2 columns">Från</p>
-              <div class="small-8 columns end">
-                <input type="date" class="home-start-date" name="home-start-date" id="home-start-date" value="2014-01-17">
-              </div>
-              
-            </div>
-          </label>
-          <label for="home-end-date" class="small-12 columns">
-            <div class="row">
-              <p class="small-2 columns">Till</p>
-              <div class="small-8 columns end">
-                <input type="date" class="home-end-date" name="home-end-date" id="home-end-date" value="2014-02-13">
-              </div>
-              
-            </div>
-          </label>
-
-          <div class="small-12 columns margin-top">
-              <a href="#" onclick="javascript: return false;" class="button white text-blue small-5 columns mode-cancel">Avbryt</a>
-              <a href="#" onclick="javascript: return false;" class="button white text-blue small-5 columns mode-submit">OK</a>
-              
-          </div>
-
-        </div> <!-- .advanced-mode -->
-      </div>
-    </div><!-- .row -->
-  </div>    
+    <!-- <a href="#" onclick="javascript: return false;" class="button small-10 small-centered margin-top">OK</a> -->
+  </div>     
 </div>
+<div class="row margin-tb hidden">
+  <div id="status-module-home" class="status-module small-12 large-6 large-centered columns scy-module yellow">
+    <span class="scy-icon-home-mode"></span>
+    <p class="small-12 title margin-tb">Scypho status: Trivseltemperatur hela dagen</p>
 
+    <!-- <a href="#" onclick="javascript: return false;" class="button small-10 small-centered margin-top">OK</a> -->
+  </div>     
+</div>
+<div class="row margin-tb hidden">
+  <div id="status-module-away" class="status-module small-12 large-6 large-centered columns scy-module yellow">
+    <span class="icon-suitcase"></span>
+    <p class="small-12 title margin-tb">Scypho status: Bortrest</p>
+
+    <!-- <a href="#" onclick="javascript: return false;" class="button small-10 small-centered margin-top">OK</a> -->
+  </div>     
+</div>
+<!-- /STATUS MODULE -->
+
+<!-- AWAY MODE MODULE -->
 <div class="row margin-top">
   <div id="away-switch-module" class="small-12 large-6 large-centered columns scy-module blue">
     <div class="row">
@@ -288,7 +256,7 @@
 
       <label for="away-mode-switch" class="switch-light switch-ios small-8 text-left small-offset-1 mode-switch columns end" onclick="">
         <input type="checkbox" name="away-mode" id="away-mode-switch">
-        <span class="small-4 columns pull-right">
+        <span class="small-3 columns pull-right">
           <span></span>
           <span></span>
 
@@ -301,25 +269,6 @@
     </div>
 
     <div class="row hidden slide-down">
-    <!--
-      <div class="small-12 columns">
-        <p class="small-6 columns">Från</p>
-        <label for="away-start-date-switch" class="switch-light switch-ios small-6 columns">
-          <input type="checkbox" name="away-start-date-switch" id="away-start-date-switch">
-          <span class="small-4 columns before-small">
-            <span>Nu</span>
-            <span>Senare</span>
-
-            <a></a>
-          </span>
-        </label>
-      </div>
-      <label for="away-start-date" class="small-12 columns margin-top slide-down hidden">
-        <div class="small-8 small-offset-4 columns">
-          <input type="date" class="away-start-date" name="away-start-date" id="away-start-date" placeholder="2014-01-13">
-        </div>
-      </label>
-      -->
       <div class="small-12 columns">
         <p class="text-centered">Bortrest tillsvidare</p>
 
@@ -356,20 +305,88 @@
     </div>
   </div><!-- .row -->  
 </div>
+<!-- /AWAY MODE MODULE -->
 
+<!-- HOME MODE MODULE -->
+<div class="row margin-tb">
+  <div id="home-switch-module" class="small-12 large-6 large-centered columns scy-module blue">
+    <div class="row">
+      <span class="scy-icon-home-mode small-3 columns"></span>
+
+      <label for="home-mode-switch" class="switch-light switch-ios small-8 text-left mode-switch columns end" onclick="">
+        <input type="checkbox" name="home-mode" id="home-mode-switch">
+        <span class="small-3 columns">
+          <span></span>
+          <span></span>
+
+          <a></a>
+        </span>
+
+
+        <p>Stanna hemma</p>
+        <p>Stanna hemma</p>
+      </label>
+    </div>
+    
+
+    <div class="row hidden slide-down">
+      <div class="small-12 columns">
+        <p class="text-centered">Trivseltemperatur till 23:00 idag</p>
+
+        <a href="#" title="" onclick="javascript: return false;"  class="show-adv-mode button small-10 small-centered columns margin-top">Ändra tid</a>
+        <div class="row advanced-mode hidden">
+          <label for="home-start-date" class="small-12 columns">
+            <div class="row">
+              <p class="small-2 columns">Från</p>
+              <div class="small-8 columns end">
+                <input type="date" class="home-start-date" name="home-start-date" id="home-start-date" value="2014-01-27">
+              </div>
+              
+            </div>
+          </label>
+          <label for="home-end-date" class="small-12 columns">
+            <div class="row">
+              <p class="small-2 columns">Till</p>
+              <div class="small-8 columns end">
+                <input type="date" class="home-end-date" name="home-end-date" id="home-end-date" value="2014-02-13">
+              </div>
+              
+            </div>
+          </label>
+
+          <div class="small-12 columns margin-top">
+              <a href="#" onclick="javascript: return false;" class="button white text-blue small-5 columns mode-cancel">Avbryt</a>
+              <a href="#" onclick="javascript: return false;" class="button white text-blue small-5 columns mode-submit">OK</a>
+              
+          </div>
+
+        </div> <!-- .advanced-mode -->
+      </div>
+    </div><!-- .row -->
+  </div>    
+</div>
+<!-- /HOME MODE MODULE -->
+
+<!-- SCHEDULE MODULE -->
 <div class="row margin-tb">
   <div id="schedule-module" class="small-12 large-6 large-centered columns scy-module yellow">
     <span class="icon-calendar"></span>
     <p class="title">Veckoschema</p>
 
     
-      {{#link-to 'schedule' class="button small-10 small-centered margin-top"}}Ändra veckoschema{{/link-to}}
+      {{#link-to 'schedule' class="button small-10 small-centered margin-top2x"}}
+    
+      Ändra veckoschema
+    
+      {{/link-to}}
     
   </div>     
 </div>
+<!-- /SCHEDULE MODULE -->
 
+<!-- COMFORT TEMP MODULE -->
 <div class="row margin-top">
-  <div id="comf-temp-module" class="small-12 large-6 large-centered columns scy-module orange">
+  <div id="comf-temp-module" class="small-12 large-6 large-centered columns scy-module blue">
     <div class="temp-wrap">
       <div class="temp-blocks">
         <div class="comf-temp small-12 large-6 large-centered text-centered columns">
@@ -403,48 +420,51 @@
     <p>Ändra trivseltemperatur.</p> -->
   </div>     
 </div>
+<!-- /COMFORT TEMP MODULE -->
 
+<!-- STATISTICS MODULE -->
 <div class="row margin-tb">
-  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module yellow">
+  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module green">
     <!-- <p class="title">Din besparing</p> -->
     <div class="small-12 small-centered columns margin-top">
       
       <div class="your-savings">
         <span>15</span>%
-        <p>lägre</p>
+        <p>lägre</p> 
       </div>
 
-      <p>energiförbrukning sedan installationen</p>
+      <p class="margin-top">Energiförbrukning sedan installationen</p>
 
     </div>
 
     
-      {{#link-to 'statistics' class="button small-10 small-centered margin-top2x"}}Visa historik{{/link-to}}
+      {{#link-to 'statistics' class="button small-10 small-centered margin-top2x"}}
+    
+      Visa historik
+    
+      {{/link-to}}
     
   </div>     
 </div>
+<!-- /STATISTICS MODULE -->
 
-
-<!-- <div class="row margin-top info-mode-button">
-  <div class="small-12 large-6 large-centered columns scy-module">
-    <span class="icon-help-circled text-blue js-show-intro"></span>
-  </div>
-</div> -->
-
+<!-- TIPS MODULE -->
 <div class="row margin-tb">
   <div id="tips-module" class="small-12 large-6 large-centered columns scy-module green">
     <span class="icon-lamp"></span>
     <p class="margin-top">Visste du att 1 procent lägre temperatur ger 5% besparing</p>
 
-    <div class="small-10 columns small-centered margin-top">
-      <div class="row">
-        <a href="#" onclick="javascript: return false;" class="button small-5 columns">Ja</a>
-        <a href="#" onclick="javascript: return false;" class="button small-5 columns">Nej</a>
-      </div>
-    </div>
+    
+      {{#link-to 'faq' class="button small-10 small-centered margin-top2x"}}
+    
+      Läs mer
+    
+      {{/link-to}}
+    
 
   </div>     
 </div>
+<!-- /TIPS MODULE -->
 
 </script>
 	<script type="text/x-handlebars" data-template-name="schedule">
@@ -512,47 +532,37 @@
           <h2>Sö</h2>
         </div>
 
-        <div class="scy-col-8 columns new-row">
+        <div id="day-1" class="scy-col-8 columns new-row">
           
           <div class="day-period"></div>
-          <div class="comf-zone touchEn" id="cz_1" data-start="06:30" data-duration="4" data-day="1"></div>
-          <div class="comf-zone touchEn" id="cz_2" data-start="16:00" data-duration="4" data-day="1"></div>
         </div>
-        <div class="scy-col-8 columns">
+        <div id="day-2" class="scy-col-8 columns">
           
           <div class="day-period"></div>
-          <div class="comf-zone touchEn" id="cz_3" data-start="06:00" data-duration="4" data-day="2"></div>
-          <div class="comf-zone touchEn" id="cz_4" data-start="16:00" data-duration="4" data-day="2"></div>
         </div>
-        <div class="scy-col-8 columns">
+        <div id="day-3" class="scy-col-8 columns">
           
           <div class="day-period"></div>
 
-          <div class="comf-zone touchEn" id="cz_5" data-start="06:00" data-duration="4" data-day="3"></div>
-          <div class="comf-zone touchEn" id="cz_6" data-start="16:00" data-duration="4" data-day="3"></div>
         </div>
-        <div class="scy-col-8 columns">
+        <div id="day-4" class="scy-col-8 columns">
           
           <div class="day-period"></div>
 
-          <div class="comf-zone touchEn" id="cz_7" data-start="06:00" data-duration="4" data-day="4"></div>
-          <div class="comf-zone touchEn" id="cz_8" data-start="16:00" data-duration="4" data-day="4"></div>
         </div>
-        <div class="scy-col-8 columns">
+        <div id="day-5" class="scy-col-8 columns">
           
           <div class="day-period"></div>
-          <div class="comf-zone touchEn" id="cz_9" data-start="06:00" data-duration="4" data-day="5"></div>
-          <div class="comf-zone touchEn" id="cz_10" data-start="16:00" data-duration="4" data-day="5"></div>
+          
         </div>
-        <div class="scy-col-8 columns">
+        <div id="day-6" class="scy-col-8 columns">
           
           <div class="day-period"></div>
-          <div class="comf-zone touchEn" id="cz_11" data-start="06:00" data-duration="15" data-day="6"></div>
+          
         </div>
-        <div class="scy-col-8 columns">
+        <div id="day-7" class="scy-col-8 columns">
           
           <div class="day-period"></div>
-          <div class="comf-zone touchEn" id="cz_12" data-start="06:00" data-duration="15" data-day="7"></div>
 
         </div>
         </div>
@@ -564,14 +574,26 @@
   <div class="row margin-top2x">
     <div class="small-12 columns">
       <a href="#" onclick="javascript: return false;" class="button half-width green" id="js-add-period">Lägg till</a>
-      <a href="#" onclick="javascript: return false;" class="button half-width coral" id="js-remove-mode">Ta bort</a>
+      <a href="#" onclick="javascript: return false;" class="button half-width coral" id="js-remove-mode" data-default-text="Ta bort" data-active-text="Ångra">Ta bort</a>
     </div>
   </div>
 </div>
 
 <div id="comf-zone-form" class="bottom-panel">
 	<div class="small-12 large-centered columns">
-		<h3>Måndag</h3>
+		<h3 data-text-new="Lägg till period med trivseltemperatur" data-text-default="Trivseltemperatur">Trivseltemperatur</h3>
+
+		<div class="row controls-from" data-visible="remove">
+	        <div class="small-12 columns">
+	        	<p class="text-centered">Vill du verkligen ta bort denna period?</p>
+	        	<p class="remove-desc text-centered">
+	        		<span class="block">Dag: <span class="js-remove-day">Onsdag</span></span>
+	        		<span class="block">Från: <span class="js-remove-from">06:00</span></span>
+	        		<span class="block">Till: <span class="js-remove-to">09:00</span></span>
+	        	</p>
+	        </div>
+      	</div>
+
 		<div class="row controls-from" data-visible="new">
 	        <div class="small-2 columns">
 	          <label for="period-day" class="left inline">Dag</label>
@@ -588,24 +610,25 @@
 	        	</select>
 	        </div>
       	</div>
-		<div class="row controls-from" data-visible="all">
+
+		<div class="row controls-form" data-visible="all">
 	        <div class="small-2 columns">
 	          <label for="from-time" class="left inline">Från</label>
 	        </div>
 	        <div class="small-4 columns">
-	        	<input type="time" name="from-time" id="from-time" value="06:30">
+	        	<input type="time" name="from-time" id="from-time" value="10:00">
 	        </div>
 	        <div class="small-6 columns">
 	        	<span class="time-controls time-plus icon-plus-circled text-white"></span>
 	        	<span class="time-controls time-minus icon-minus-circled text-white"></span>
 	        </div>
       	</div>
-		<div class="row controls-from" data-visible="all">
+		<div class="row controls-form" data-visible="all">
 	        <div class="small-2 columns">
 	          <label for="to-time" class="left inline">Till</label>
 	        </div>
 	        <div class="small-4 columns">
-	        	<input type="time" name="to-time" id="to-time">
+	        	<input type="time" name="to-time" id="to-time" value="15:00">
 	        </div>
 	        <div class="small-6 columns">
 	        	<span class="time-controls time-plus icon-plus-circled text-white"></span>
@@ -626,7 +649,7 @@
 
 <!-- Main Grid Section -->
 <div class="row margin-tb">
-  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module yellow">
+  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module green">
     <div class="small-12 small-centered columns margin-top">
       
       <div class="your-savings">
@@ -634,18 +657,18 @@
         <p>lägre</p>
       </div>
 
-      <p>energiförbrukning sedan installationen</p>
+      <p class="margin-top">Energiförbrukning sedan installationen</p>
     </div>
 
   </div>     
 </div>
 
 <div class="row margin-tb">
-  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module yellow">
+  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module green">
     <div class="small-12 small-centered columns margin-top">
       
       <p class="margin-tb">Trivseltemperatur: 21&deg;C</p>
-      <p class="margin-tb">Uppmätt medeltemperatur: 18&deg;</p>
+      <p class="margin-tb">Din medeltemperatur: 18&deg;</p>
       <p class="margin-tb">(5% besparing per grad)</p>
     </div>
 
@@ -653,7 +676,7 @@
 </div>
 
 <div class="row margin-tb">
-  <div id="stat2-module" class="small-12 large-6 large-centered columns scy-module yellow">
+  <div id="stat2-module" class="small-12 large-6 large-centered columns scy-module green">
     <p class="title">Din historik</p>
     <div class="small-12 small-centered columns margin-top">
       <div id="stats"></div>
@@ -662,23 +685,11 @@
         <option value="week">Senaste vecka</option>
         <option value="month">Senaste månad</option>
         <option value="year">Senaste år</option>
+        <option value="from_installation" selected >Sedan installationen</option>
       </select>
-    </div>
 
-  </div>     
-</div>
-
-
-<div class="row margin-tb">
-  <div id="tips-module" class="small-12 large-6 large-centered columns scy-module green">
-    <span class="icon-lamp"></span>
-    <p>Visste du att 1 procent lägre temperatur ger 5% besparing</p>
-
-    <div class="row margin-top">
-      <div class="small-11 small-offset-1 columns">
-        <a href="#" onclick="javascript: return false;" class="button half-width">Ja</a>
-        <a href="#" onclick="javascript: return false;" class="button half-width">Nej</a>
-      </div>
+      <div id="temps" class="margin-top2x"></div>
+      
     </div>
 
   </div>     
@@ -691,18 +702,22 @@
 <div id="login" class="row margin-tb">
   <div class="small-12 large-6 columns small-centered">
     <h1 class="title scy-icon-logo columns small-centered"></h1>
-    <form action="#" method="post" class="margin-top"  {{action submitLogin on="submit"}}  >
+    <form action="#" method="post" class="margin-top">
       <label for="user_name">Användarnamn</label>
-      <input type="text" name="user_name" value="" placeholder="Användarnamn">
+      
+        {{input value=username type="text" placeholder="Användarnamn"}}
+      
 
       <label for="user_pass">Lösenord</label>
-      <input type="password" name="user_pass" id="user_pass" value="" placeholder="Lösenord">
+      
+        {{input value=password type="text" placeholder="Lösenord"}}
+      
 
       <p class="help-text">Om du har beställt Scypho, borde du ha fått ditt lösenord skickat till din epost.</p>
-      <input type="submit" name="submit" value="Logga in" class="button blue small-centered columns">
+      <input type="submit" name="submit"  {{action login}}  value="Logga in" class="button small-centered columns">
 
-      <a href="#" title="" class="small-6 columns text-left form-link">Glömt lösenord</a>
-      <a href="#" title="" class="small-6 columns text-right form-link">Registrera</a> 
+      <a href="http://scypho.se/forbestall/" title="" class="small-6 columns text-left form-link">Glömt lösenord</a>
+      <a href="http://scypho.se/forbestall/" title="" class="small-6 columns text-right form-link">Registrera</a> 
       
       <div class="small-12 columns border-top margin-top">
         <div class="row">
@@ -721,10 +736,7 @@
 <!-- Main Grid Section -->
 <div id="intro" class="row margin-tb">
 
-  
-    {{#if isStep1}}
-      
-      <div class="small-12 large-6 columns small-centered">
+      <div id="step-1" class="small-12 large-6 columns small-centered step-module">
         <h1 class="title scy-icon-logo columns small-centered"></h1>
         <h2 class="sub-title text-centered columns small-centered">Välkommen!</h2>
         <p class="text-centered">Ställ in ditt lösenord</p>
@@ -734,22 +746,17 @@
           <input type="text" name="user_pass1" value="" placeholder="Lösenord">
 
           <label for="user_pass">Upprepa lösenord</label>
-          <input type="password" name="user_pass2" id="user_pass" value="" placeholder="Upprepa Lösenord">
+          <input type="password" name="user_pass2" id="user_pass" value="" placeholder="Upprepa lösenord">
 
           <input type="submit" {{action toStep2}} name="submit" value="Spara och gå vidare" class="button small-9 pull-right columns small-centered">
-          <input type="submit" {{action toDashboard}} name="cancel" value="Hoppa över" class="button grayBg small-7 pull-right columns small-centered clear-both">
+          <input type="submit" {{action toStep2}} name="cancel" value="Hoppa över" class="button grayBg small-7 pull-right columns small-centered clear-both">
 
         </form>
       </div>
-      
-    {{/if}}
 
-    {{#if isStep2}}
-
-      
-      <div class="small-12 large-6 columns small-centered">
+      <div id="step-2" class="small-12 large-6 columns small-centered step-module hidden">
         <h1 class="title scy-icon-logo columns small-centered"></h1>
-        <p class="text-centered">Nu kan du ändra din trivseltemperatur, om du vill:</p>
+        <p class="text-centered">Nu kan du ändra din trivseltemperatur, om du vill</p>
         
         <div id="comf-temp-module" class="scy-module">
           <div class="temp-wrap">
@@ -773,22 +780,16 @@
 
         <div class="margin-top">
           <input type="submit" {{action toStep3}} name="submit" value="Spara och gå vidare" class="button small-9 pull-right columns small-centered">
-          <input type="submit" {{action toDashboard}} name="cancel" value="Hoppa över" class="button grayBg small-7 pull-right columns small-centered clear-both">
+          <input type="submit" {{action toStep3}} name="cancel" value="Hoppa över" class="button grayBg small-7 pull-right columns small-centered clear-both">
         </div>
       </div>
 
-      
-    {{/if}}
-
-    {{#if isStep3}}
-
-      
-      <div class="small-12 large-6 columns small-centered">
+      <div id="step-3" class="small-12 large-6 columns small-centered step-module hidden">
         <h1 class="title scy-icon-logo columns small-centered"></h1>
         
         <form action="#" method="get" class="sensor-name-form margin-top">
-          <label for="user_name" class="text-centered">Namnge ditt hus</label>
-          <input type="text" name="user_pass1" value="" placeholder="Husets namn">
+          <label for="house_name" class="text-centered">Namnge ditt hus</label>
+          <input type="text" id="house_name" name="house_name" value="" placeholder="Husets namn">
 
           <p class="text-centered">Namnge dina sensorer:</p>
           <!-- <div class="row">
@@ -800,7 +801,7 @@
           <div class="row margin-top">
             <label for="sensor1" class="small-2 columns">1</label>
             <div class="small-10 columns">
-              <input type="password" name="sensor1" id="sensor1" value="" placeholder="Utomhus">
+              <input type="text" name="sensor1" id="sensor1" value="" placeholder="Utomhus">
             </div>
             
           </div>
@@ -808,7 +809,7 @@
           <div class="row">
             <label for="sensor2" class="small-2 columns">2</label>
             <div class="small-10 columns">
-              <input type="password" name="sensor2" id="sensor2" value="" placeholder="Vardagsrum">
+              <input type="text" name="sensor2" id="sensor2" value="" placeholder="Vardagsrum">
             </div>
             
           </div>
@@ -816,7 +817,7 @@
           <div class="row">
             <label for="sensor3" class="small-2 columns">3</label>
             <div class="small-10 columns">
-              <input type="password" name="sensor3" id="sensor3" value="" placeholder="Sovrum">
+              <input type="text" name="sensor3" id="sensor3" value="" placeholder="Sovrum">
             </div>
             
           </div>
@@ -824,323 +825,178 @@
 
         <div class="margin-top">
           <input type="submit" {{action toDashboard}} name="submit" value="Spara och gå vidare" class="button blue small-9 pull-right columns small-centered">
+          <input type="submit" {{action toDashboard}} name="cancel" value="Hoppa över" class="button grayBg small-7 pull-right columns small-centered clear-both">
         </div>
 
         </form>
       </div>
 
-      
-    {{/if}}
-  
 </div>
 
 </script>
-	<script type="text/x-handlebars" data-template-name="intro-dashboard">
+	<script type="text/x-handlebars" data-template-name="settings">
 
 <!-- Main Grid Section -->
-<div class="row margin-tb hidden">
-  <div id="error-module" class="small-12 large-6 large-centered columns scy-module coral">
-    <span class="icon-attention"></span>
-    <p>Scypho är offline
-      
-    
-      {{view.firstName}}
-    
-    </p>
-  </div>     
-</div>
-
-<div class="row margin-top">
-  <div id="sensors-module" class="small-12 large-6 large-centered columns scy-module yellow">
-    <span class="icon-home yellow"></span>
-      <div class="temp-wrap">
-        <div class="small-6 columns temp-blocks border-right">
-          <div class="border-bottom">
-            <span class="degree">20&deg;</span>
-            <p>Sovrum</p>
-          </div>
-        </div>
-        <div class="small-6 columns temp-blocks">
-          <div class="border-bottom">
-            <span class="degree">-5&deg;</span>
-            <p>Utomhus</p>
-          </div>
-        </div>
-        <div class="small-6 columns temp-blocks border-right">
-          <span class="degree">20&deg;</span>
-          <p>Kök</p>
-        </div>
-        <div class="small-6 columns temp-blocks">
-          <span class="degree">20&deg;</span>
-          <p>Medelvärde</p>
-        </div>
-        
-      </div>
-
-  </div>     
-</div>
-
-<div class="row margin-tb">
-  <div id="status-module" class="small-12 large-6 large-centered columns scy-module green">
-    <span class="icon-leaf"></span>
-    <p class="small-10 title">Sparläge</p>
-    <p class="small-10">Trivseltemperatur börjar om </p>
-    <p id="countdown" class="small-10 small-centered"></p>
-
-    <!-- <a href="#" onclick="javascript: return false;" class="button small-10 small-centered margin-top">Ok</a> -->
-  </div>     
-</div>
-
-<div class="row margin-tb">
-  <div id="home-switch-module" class="small-12 large-6 large-centered columns scy-module blue">
-    <div class="row">
-      <span class="scy-icon-home-mode small-2 columns"></span>
-
-      <label for="home-mode-switch" class="switch-light switch-ios small-9 mode-switch columns end" onclick="">
-        <input type="checkbox" name="home-mode" id="home-mode-switch">
-        <span class="small-2 columns">
-          <span></span>
-          <span></span>
-
-          <a></a>
-        </span>
-
-
-        <p>Hemma</p>
-        <p>Hemma</p>
-      </label>
-    </div>
-    
-
-    <div class="row hidden slide-down">
-      <div class="small-12 columns">
-        
-        <p class="text-centered">Hemma till 23:00</p>
-
-        <a href="#" title="" onclick="javascript: return false;"  class="show-adv-mode button small-11 small-centered columns margin-top">Ändra tid</a>
-        <div class="advanced-mode hidden">
-          <label for="home-start-date" class="small-12 columns margin-top">
-            <p class="small-4 columns">Från</p>
-            <div class="small-8 columns">
-              <input type="date" class="home-start-date" name="home-start-date" id="home-start-date" placeholder="2014-01-23">
-            </div>
-          </label>
-          <label for="home-end-date" class="small-12 columns margin-top">
-            <p class="small-4 columns">Till</p>
-            <div class="small-8 columns">
-              <input type="date" class="home-end-date" name="home-end-date" id="home-end-date" placeholder="2014-02-13">
-            </div>
-          </label>
-
-          <div class="flat-buttons small-11 small-offset-1 columns">
-            <a href="#" onclick="javascript: return false;" class="button white text-blue half-width mode-cancel">Avbryt</a>
-            <a href="#" onclick="javascript: return false;" data-mode="home" class="button white text-blue half-width end mode-submit">OK</a>
-          </div>
-        </div> <!-- .advanced-mode -->
-      </div>
-    </div><!-- .row -->
-  </div>    
-</div>
-
-<div class="row margin-top">
-  <div id="away-switch-module" class="small-12 large-6 large-centered columns scy-module blue">
-    <div class="row">
-      <span class="icon-suitcase small-2 columns"></span>
-
-      <label for="away-mode-switch" class="switch-light switch-ios small-9 small-offset-1 mode-switch columns end" onclick="">
-        <input type="checkbox" name="away-mode" id="away-mode-switch">
-        <span class="small-2 columns pull-right">
-          <span></span>
-          <span></span>
-
-          <a></a>
-        </span>
-
-        <p>Bortrest</p>
-        <p>Bortrest</p>
-      </label>
-    </div>
-
-    <div class="row hidden slide-down">
-    <!--
-      <div class="small-12 columns">
-        <p class="small-6 columns">Från</p>
-        <label for="away-start-date-switch" class="switch-light switch-ios small-6 columns">
-          <input type="checkbox" name="away-start-date-switch" id="away-start-date-switch">
-          <span class="small-4 columns before-small">
-            <span>Nu</span>
-            <span>Senare</span>
-
-            <a></a>
-          </span>
-        </label>
-      </div>
-      <label for="away-start-date" class="small-12 columns margin-top slide-down hidden">
-        <div class="small-8 small-offset-4 columns">
-          <input type="date" class="away-start-date" name="away-start-date" id="away-start-date" placeholder="2014-01-13">
-        </div>
-      </label>
-      -->
-      <div class="small-12 columns">
-        <p class="text-centered">Bortrest tillsvidare</p>
-
-        <a href="#" title="" onclick="javascript: return false;" class="show-adv-mode button small-11 small-centered columns margin-top">Ändra tid</a>
-        <div class="advanced-mode hidden">
-          <label for="away-start-date" class="small-12 columns margin-top">
-            <p class="small-4 columns">Från</p>
-            <div class="small-8 columns">
-              <input type="date" class="away-start-date" name="away-start-date" id="away-start-date" placeholder="2014-01-23">
-            </div>
-          </label>
-
-          <label for="away-end-date" class="small-12 columns margin-top">
-            <p class="small-4 columns">Till</p>
-            <div class="small-8 columns">
-              <input type="date" class="away-end-date" name="away-end-date" id="away-end-date" placeholder="2014-01-25">
-            </div>
-          </label>
-
-          <div class="flat-buttons small-11 small-offset-1 columns">
-            <a href="#" onclick="javascript: return false;" class="button white text-blue half-width mode-cancel">Avbryt</a>
-            <a href="#" onclick="javascript: return false;" data-mode="away" class="button white text-blue half-width end mode-submit">OK</a>
-          </div>
-        </div><!-- .advanced-mode -->
-      </div>
-    </div>
-  </div><!-- .row -->  
-</div>
-
-<div class="row margin-tb">
-  <div id="schedule-module" class="small-12 large-6 large-centered columns scy-module yellow">
-    <span class="icon-calendar"></span>
-    <p class="title">Veckoschema</p>
-
-    
-      {{#link-to 'schedule' class="button small-11 small-centered margin-top"}}Ändra veckoschema{{/link-to}}
-    
-  </div>     
-</div>
-
-<div class="row margin-top">
-  <div id="comf-temp-module" class="small-12 large-6 large-centered columns scy-module orange">
-    <div class="temp-wrap">
-      <div class="temp-blocks">
-        <div class="comf-temp small-7 small-offset-3 columns">
-          <span id="ideal-degree" class="degree">20</span>
-          <span class="icon-heart-empty"></span>
-        </div>
-        <div class="temp-controls small-2 columns end">
-          <span class="time-controls time-plus icon-plus-circled text-white js-plus-temp"></span>
-          <span class="time-controls time-minus icon-minus-circled text-white js-minus-temp"></span>
-        </div>
-      </div>
-    </div>
-    <p>Ändra Trivseltemperatur.</p>
-  </div>     
-</div>
-
-<div class="row margin-tb">
-  <div id="stat-module" class="small-12 large-6 large-centered columns scy-module yellow">
-    <p class="title">Din medeltemperatur</p>
-    <div class="small-12 small-centered columns margin-top">
-      
-      <div class="your-savings">
-        <span>15</span>%
-        <p>lägre</p>
-      </div>
-
-    </div>
-
-    
-      {{#link-to 'statistics' class="button small-11 small-centered margin-top"}}Visa statistik{{/link-to}}
-    
-  </div>     
-</div>
-
-<!--
-<div class="row margin-tb">
-  <div id="tips-module" class="small-12 large-6 large-centered columns scy-module green">
-    <span class="icon-lamp"></span>
-    <p>Visste du att...</p>
-
-    <div class="small-11 columns small-centered margin-top">
+<div id="settings" class="row">
+  
+  <div class="small-12 large-6 columns small-centered">
+    <form action="#" method="get" class="sensor-name-form margin-top">
       <div class="row">
-        <a href="#" onclick="javascript: return false;" class="button small-5 columns">Ja</a>
-        <a href="#" onclick="javascript: return false;" class="button small-5 columns">Nej</a>
+        <div class="small-12 columns">
+          <h1>Ditt hus</h1>
+          <label for="house_name">Namnge ditt hus</label>
+          <input type="text" id="house_name" name="house_name" value="" placeholder="Husets namn">
+        </div>
       </div>
+
+      <h1 class="margin-top">Sensorer</h1>
+      <p class="text-centered">Namnge dina sensorer:</p>
+      <!-- <div class="row">
+        <div class="small-8 columns small-centered text-centered">
+          <img src="http://placekitten.com/200/200" alt="" />
+        </div>
+      </div> -->
+
+      <div class="row margin-top">
+        <label for="sensor1" class="small-2 sensor-label columns">1</label>
+        <div class="small-10 columns">
+          <input type="text" name="sensor1" id="sensor1" value="" placeholder="Utomhus">
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <label for="sensor2" class="small-2 sensor-label columns">2</label>
+        <div class="small-10 columns">
+          <input type="text" name="sensor2" id="sensor2" value="" placeholder="Vardagsrum">
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <label for="sensor3" class="small-2 sensor-label columns">3</label>
+        <div class="small-10 columns">
+          <input type="text" name="sensor3" id="sensor3" value="" placeholder="Sovrum">
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="small-12 columns">
+          <h1 class="margin-tb">Lösenord</h1>
+          <label for="old_password">Nuvarande lösenord</label>
+          <input type="text" name="old_password" id="old_password" value="" placeholder="Nuvarande lösenord">
+        </div>
+        <div class="small-12 columns margin-top">
+          <label for="new_password">Nytt lösenord</label>
+          <input type="password" name="new_password" id="new_password" value="" placeholder="Nytt lösenord">
+        </div>
+      </div>
+
+      <div class="margin-top">
+        <input type="submit" {{action toDashboard}} name="cancel" value="Avbryt" class="button blue small-5 columns">
+        <input type="submit" {{action toDashboard}} name="submit" value="Spara" class="button blue small-5 columns">
+      </div>
+
+    </form>
+
+    <div class="row">
+      <h1 class="small-12 large-8 columns margin-top">Extra användare</h1>
+      <label for="invitation" class="small-12 columns margin-top">Bjud in extra användare till detta konto</label>
+      <div class="small-12 large-8 columns">
+        <input type="text" name="invitation" id="invitation" value="" placeholder="Email">
+      </div>
+      <div class="small-6 large-4 columns pull-right">
+        <a href="#" title="" {{action toDashboard}}  class="button blue whole-width">Bjud in</a>
+      </div>
+      
     </div>
 
-  </div>     
+  </div>
 </div>
--->
 
 </script>
+	<script type="text/x-handlebars" data-template-name="faq">
 
-	<div class="help-overlay">
-	<!-- <div class="help-text temp-text small-12 large-6 small-centered columns ">
-		<p>Här ser du aktuella temperaturer i ditt hus</p>
-		<span class="help-arrow"></span>
-	</div>
+<!-- Main Grid Section -->
+<div id="faq" class="row">
+  
+  <div class="small-12 large-6 columns small-centered">
+    <h1>Kom igång</h1>
+    <dl class="accordion" data-scypho-accordion>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel1">Hur mycket kan jag spara?</a>
+        <div id="panel1" class="content">
+          Hur mycket du sparar beror mycket på dig själv. Vi ger dig ett verktyg för att få kontroll! Beroende på dina inställningar, kapacitet och typ av värmesystem och hur ofta du är hemma kan det se olika ut. Under tre års tester i riktiga hus har besparingen varit upp till 30%, oftast runt 15-20%.
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel2">Varför är Scypho mer effektivt än andra lösningar?</a>
+        <div id="panel2" class="content">
+          Scypho bygger upp en unik styrkurva för just ditt hus. Till skillnad från rena fjärrstyrningstjänster eller energimätare tar Scypho klivet vidare och automatiserar din styrning. Styrningen anpassas till ditt individuella hus och hur du använder det. En solig dag påbörjas uppvärmningen lite senare och en kall vinterdag behövs det mer energi. Beräkningarna sker i realtid i molnet och du får alltid de mest aktuella styrparametrarna för just ditt hus.
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel3">Hur loggar jag in på My Scypho?</a>
+        <div id="panel3" class="content">
+          Du kan logga in via din dator på www.scypho.se eller direkt via My Scypho appen. My Scypho är just nu under utveckling och vi meddelar så snart arbetet är klart. Givetvis kommer My Scypho att finnas på plats innan vi påbörjar installationerna.
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel4">Medföljer en garanti?</a>
+        <div id="panel4" class="content">
+          Scypho installeras inte direkt mot din värmekälla utan kopplas upp mot den temperaturgivare som styr din värmekälla. Eftersom det inte är en integration eller ingrepp i ditt befintliga värmesystem behövs ingen garanti. Om du skulle ha något problem med ditt Scypho system eller om något inte fungerar som det ska är du välkommen att kontakta oss så hjälper vi dig att fixa det!
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel5">Hur kontaktar jag kundtjänst?</a>
+        <div id="panel5" class="content">
+          Du kan maila oss på info@scypho.se eller ringa under dagtid på telefonnummer 070-601 21 02.
+        </div>
+      </dd>
+    </dl>
 
-	<div class="help-text status-text small-12 large-6 small-centered columns ">
-		<p>Scypho status berättar vad Scypho gör just nu</p>
-		<span class="help-arrow"></span>
-	</div>
+    <h1 class="margin-top2x">Installation</h1>
+    <dl class="accordion" data-scypho-accordion>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel6">Hur mycket kan jag spara?</a>
+        <div id="panel6" class="content">
+          Hur mycket du sparar beror mycket på dig själv. Vi ger dig ett verktyg för att få kontroll! Beroende på dina inställningar, kapacitet och typ av värmesystem och hur ofta du är hemma kan det se olika ut. Under tre års tester i riktiga hus har besparingen varit upp till 30%, oftast runt 15-20%.
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel7">Varför är Scypho mer effektivt än andra lösningar?</a>
+        <div id="panel7" class="content">
+          Scypho bygger upp en unik styrkurva för just ditt hus. Till skillnad från rena fjärrstyrningstjänster eller energimätare tar Scypho klivet vidare och automatiserar din styrning. Styrningen anpassas till ditt individuella hus och hur du använder det. En solig dag påbörjas uppvärmningen lite senare och en kall vinterdag behövs det mer energi. Beräkningarna sker i realtid i molnet och du får alltid de mest aktuella styrparametrarna för just ditt hus.
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel8">Hur loggar jag in på My Scypho?</a>
+        <div id="panel8" class="content">
+          Du kan logga in via din dator på www.scypho.se eller direkt via My Scypho appen. My Scypho är just nu under utveckling och vi meddelar så snart arbetet är klart. Givetvis kommer My Scypho att finnas på plats innan vi påbörjar installationerna.
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel9">Medföljer en garanti?</a>
+        <div id="panel9" class="content">
+          Scypho installeras inte direkt mot din värmekälla utan kopplas upp mot den temperaturgivare som styr din värmekälla. Eftersom det inte är en integration eller ingrepp i ditt befintliga värmesystem behövs ingen garanti. Om du skulle ha något problem med ditt Scypho system eller om något inte fungerar som det ska är du välkommen att kontakta oss så hjälper vi dig att fixa det!
+        </div>
+      </dd>
+      <dd>
+        <a onclick="javascript: return false;" href="#panel10">Hur kontaktar jag kundtjänst?</a>
+        <div id="panel10" class="content">
+          Du kan maila oss på info@scypho.se eller ringa under dagtid på telefonnummer 070-601 21 02.
+        </div>
+      </dd>
+    </dl>
 
-	<div class="help-text home-mode-text small-12 large-6 small-centered columns ">
-		<p>Hemmaläge använder du när du tillfälligt behöver vara hemma</p>
-		<span class="help-arrow"></span>
-	</div>
+  </div>
 
-	<div class="help-text semester-mode-text small-12 large-6 small-centered columns ">
-		<p>Kopplar du in Bortrest så sparar du energi hela dygnet</p>
-		<span class="help-arrow"></span>
-	</div>
+  <a href="http://scypho.se/support/" title="Mer information" class="button small-12 small-centered blue margin-top2x">Läs mer på www.scypho.se</a>
 
-	<div class="help-text schedule-text small-12 large-6 small-centered columns ">
-		<p>Det rullande veckoschemat är det som vanligen styr Scypho</p>
-		<span class="help-arrow"></span>
-	</div>
-
-	<div class="help-text comf-temp-text small-12 large-6 small-centered columns ">
-		<p>Här kan du ändra din Trivseltemperatur</p>
-		<span class="help-arrow"></span>
-	</div>
-
-	<div class="help-text stat-text small-12 large-6 small-centered columns ">
-		<p>Statistiken visar hur mycket du sparar</p>
-		<span class="help-arrow"></span>
-	</div>
-
-	<div class="help-text info-text small-12 large-6 small-centered columns ">
-		<p>Vill du se den här informationen igen, tryck här</p>
-		<span class="help-arrow"></span>
-	</div> -->
-	
-	<div class="help-text small-12 large-6 small-centered columns hp-text-1">
-		<p>Nästan klart!</p>
-	</div>
-
-	<div class="help-text small-12 large-6 small-centered columns hp-text-2">
-		<p>Ett rullande 
-		veckoschema styr 
-		när Scypho ger dig 
-		Trivseltemperatur eller
-		sparar energi.</p>
-	</div>
-
-	<div class="help-text small-12 large-6 small-centered columns hp-text-3">
-		<span class="help-arrow"></span>
-		<p>Scypho status
-		berättar vad Scypho 
-		gör just nu.</p>
-	</div>
-
-	<div class="help-text close-info-text small-12 large-6 small-centered columns text-centered">
-		<p class="js-close-intro">OK, kör igång!</p>
-	</div>
-	  
 </div>
+
+</script>
 
     </body>
 </html>

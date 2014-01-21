@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'jekyll'
+gem 'sass', :require => 'sass'
+gem 'jekyll-assets'
+gem 'uglifier'
+gem 'jekyll-multiple-languages-plugin'

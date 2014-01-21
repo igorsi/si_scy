@@ -4698,6 +4698,35 @@ ul.off-canvas-list {
 .lt-ie10 .move-right > .inner-wrap {
   left: 250px; }
 
+.accordion {
+  *zoom: 1;
+  margin-bottom: 0; }
+  .accordion:before, .accordion:after {
+    content: " ";
+    display: table; }
+  .accordion:after {
+    clear: both; }
+  .accordion dd {
+    display: block;
+    margin-bottom: 0 !important; }
+    .accordion dd.active a {
+      background: #e7e7e7; }
+    .accordion dd > a {
+      background: #efefef;
+      color: #222222;
+      padding: 1rem;
+      display: block;
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-size: 1rem; }
+      .accordion dd > a:hover {
+        background: #e2e2e2; }
+  .accordion .content {
+    display: none;
+    padding: 1.40625rem; }
+    .accordion .content.active {
+      display: block;
+      background: white; }
+
 .flex-video {
   position: relative;
   padding-top: 1.5625rem;
@@ -5413,6 +5442,12 @@ html, body {
   min-height: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+body {
+  -webkit-touch-callout: none !important; }
+
+a {
+  -webkit-user-select: none !important; }
+
 body.no-top {
   height: auto; }
 
@@ -5440,7 +5475,8 @@ h3 {
 p {
   font-family: "Maven Pro", Georgia, sans-serif;
   color: #3d3d3f;
-  font-size: 1rem; }
+  font-size: 1rem;
+  line-height: 20px; }
 
 span {
   font-family: "Maven Pro", Georgia, sans-serif;
@@ -5468,6 +5504,9 @@ a {
   @media only screen and (min-width: 40.063em) {
     .button {
       font-size: 1.125rem; } }
+  .button:hover {
+    background-color: #fff;
+    color: #29abe2; }
 
 .content-wrap {
   min-height: 100%; }
@@ -5478,6 +5517,12 @@ a {
   -moz-box-shadow: none;
   box-shadow: none;
   text-shadow: none; }
+
+.whole-width {
+  width: 100%; }
+
+.margin-bottom {
+  margin-bottom: 0.75rem !important; }
 
 .margin-top {
   margin-top: 0.75rem !important; }
@@ -5506,7 +5551,8 @@ a {
   border-top: 1px solid #FFF; }
 
 .border-bottom {
-  border-bottom: 1px solid #FFF; }
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 0.625rem; }
 
 .inner-wrap {
   position: relative;
@@ -5564,14 +5610,26 @@ a {
       border: 2px solid #fff; }
 
 .blue {
-  background-color: #29abe2;
-  color: #fff; }
+  background-color: #29abe2; }
+  .blue:hover {
+    background-color: #29abe2;
+    color: #fff; }
+  .no-touch .blue:hover {
+    color: #fff; }
   .blue .button {
     background-color: #fff;
     color: #29abe2;
     border: 2px solid #fff; }
     .no-touch .blue .button:hover {
-      background-color: #29abe2;
+      background-color: #fff;
+      color: #29abe2;
+      border: 2px solid #fff; }
+    .blue .button:hover {
+      background-color: #fff;
+      color: #29abe2;
+      border: 2px solid #fff; }
+    .no-touch .blue .button.grayBg:hover {
+      background-color: #c9c9c9;
       color: #fff;
       border: 2px solid #fff; }
 
@@ -5579,7 +5637,7 @@ a {
   background-color: #c9eaf8;
   color: #fff; }
   .no-touch .blueLight:hover {
-    background-color: #4671a3; }
+    background-color: #c9eaf8; }
   .blueLight .button {
     background-color: #fff;
     color: #c9eaf8;
@@ -5678,16 +5736,14 @@ a {
   background-color: #fff;
   color: white;
   border: 2px solid #fff; }
-  .no-touch .white:hover {
-    background-color: #4671a3;
-    color: #fff;
-    border: 2px solid #fff; }
 
 .text-blueDark {
   color: #4671a3; }
 
 .text-blue {
   color: #29abe2; }
+  .no-touch .text-blue:hover {
+    color: #29abe2; }
 
 .text-orange {
   color: #fdab35; }
@@ -5742,7 +5798,8 @@ section.left-small a {
     font-size: 2.8125rem;
     display: block; }
   .inner-wrap .scy-module .title {
-    font-size: 1.375rem; }
+    font-size: 1.375rem;
+    line-height: 1.375rem; }
     @media only screen and (min-width: 40.063em) {
       .inner-wrap .scy-module .title {
         font-size: 1.875rem; } }
@@ -5754,6 +5811,8 @@ section.left-small a {
     background-color: #29abe2; }
   .no-touch .inner-wrap .scy-module.orange:hover {
     background-color: #fdab35; }
+  .inner-wrap .scy-module .button {
+    margin-bottom: 0; }
 .inner-wrap footer {
   position: relative;
   width: 100%;
@@ -5909,7 +5968,11 @@ section.left-small a {
 #schedule .first {
   margin-left: 0 !important; }
 #schedule #schedule-cont {
+  height: 100%;
   margin-bottom: 1.25rem; }
+  @media only screen and (min-width: 40.063em) {
+    #schedule #schedule-cont {
+      height: 56.25rem; } }
   #schedule #schedule-cont h2 {
     color: #3d3d3f; }
   #schedule #schedule-cont .side-scroll {
@@ -5991,16 +6054,18 @@ section.left-small a {
       border-color: #d4e7c7; }
     #schedule #schedule-cont .comf-zone.remove {
       cursor: pointer; }
-    #schedule #schedule-cont .comf-zone.icon-cancel:before {
-      position: absolute;
-      top: 50%;
-      font-size: 2.5rem;
-      margin: -25% auto 0 auto;
-      left: 20%; }
-      @media only screen and (min-width: 40.063em) {
-        #schedule #schedule-cont .comf-zone.icon-cancel:before {
-          margin: -6% auto 20% auto;
-          left: 44%; } }
+    #schedule #schedule-cont .comf-zone.icon-cancel-circled {
+      color: #fff; }
+      #schedule #schedule-cont .comf-zone.icon-cancel-circled:before {
+        position: absolute;
+        top: 50%;
+        font-size: 2.5rem;
+        margin: -33% auto 0 auto;
+        left: 20%; }
+        @media only screen and (min-width: 40.063em) {
+          #schedule #schedule-cont .comf-zone.icon-cancel-circled:before {
+            margin: -7% auto 20% auto;
+            left: 44%; } }
   #schedule #schedule-cont .comf-zone-wrap {
     width: 6.25rem;
     position: relative;
@@ -6055,6 +6120,17 @@ section.left-small a {
     float: left;
     font-size: 2.1875rem;
     cursor: pointer; }
+  #schedule .bottom-panel p, #schedule .bottom-panel span {
+    color: #fff; }
+  #schedule .bottom-panel .remove-desc {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding: 1.25rem 0; }
+    #schedule .bottom-panel .remove-desc .block {
+      display: block;
+      width: 100%; }
+    #schedule .bottom-panel .remove-desc span {
+      font-size: 1.125rem; }
 
 #home .temp-wrap {
   display: inline-block;
@@ -6096,7 +6172,8 @@ section.left-small a {
       right: -25px; }
     #home #comf-temp-module .temp-blocks .comf-temp .degree-box #ideal-degree {
       font-size: 4.5625rem;
-      position: relative; }
+      position: relative;
+      letter-spacing: -5px; }
 #home #comf-temp-module .degree-box [class^="icon-"] {
   position: absolute;
   top: 0;
@@ -6114,7 +6191,7 @@ section.left-small a {
       margin: 0; }
     #home #away-switch-module label p,
     #home #home-switch-module label p {
-      font-size: 1.75rem;
+      font-size: 1.375rem;
       line-height: 2.1875rem; }
   #home #away-switch-module .advanced-mode label p,
   #home #home-switch-module .advanced-mode label p {
@@ -6157,7 +6234,7 @@ section.left-small a {
     font-size: 80px; }
 #home #countdown {
   font-size: 1.25rem; }
-#home #status-module p {
+#home .status-module p {
   margin: 0 auto; }
 #home #sensors-module [class^="icon-"] {
   font-size: 2.5rem;
@@ -6178,7 +6255,7 @@ section.left-small a {
   margin: 1.25rem 0 0 22px;
   width: 89%;
   display: block;
-  background-color: #fdab35;
+  background-color: #8ec546;
   border: 2px solid #fff;
   color: #fff;
   -webkit-appearance: none;
@@ -6189,6 +6266,14 @@ section.left-small a {
   @media only screen and (min-width: 40.063em) {
     #stat2-module .stat-xaxisLabel {
       width: 95%; } }
+#stat2-module #temps {
+  display: inline-block;
+  text-align: left; }
+  #stat2-module #temps label {
+    color: #fff;
+    line-height: 40px; }
+  #stat2-module #temps input {
+    margin-top: 0.9375rem; }
 
 #login h1, #login h2, #login label, #login p, #login span, #intro h1, #intro h2, #intro label, #intro p, #intro span {
   color: #fff; }
@@ -6229,7 +6314,7 @@ section.left-small a {
 #intro #comf-temp-module .temp-controls {
   margin: 0;
   position: absolute;
-  right: -1.25rem;
+  right: -1.875rem;
   top: 0; }
   @media only screen and (min-width: 40.063em) {
     #intro #comf-temp-module .temp-controls {
@@ -6239,3 +6324,18 @@ section.left-small a {
 #intro .sensor-name-form label {
   font-size: 1rem;
   line-height: 2.1875rem; }
+
+#settings .sensor-label {
+  line-height: 2.1875rem; }
+#settings input {
+  margin-bottom: 0.3125rem; }
+
+#faq h2 {
+  color: #090909; }
+#faq a {
+  color: #090909; }
+#faq .button {
+  color: #fff; }
+  #faq .button:hover {
+    background-color: #29abe2;
+    color: #fff; }
