@@ -25337,11 +25337,11 @@ $(function(){
 	  }
 	});
 
-	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		// $('#all-content').toggleClass('hidden');
-		$('.ember-view').toggleClass('hidden');
-		$('#iframe-wrapper').toggleClass('hidden');
-	}
+	// if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	// 	// $('#all-content').toggleClass('hidden');
+	// 	$('.ember-view').toggleClass('hidden');
+	// 	$('#iframe-wrapper').toggleClass('hidden');
+	// }
 
 });
 //Prevent mobile browser from selecting the text
