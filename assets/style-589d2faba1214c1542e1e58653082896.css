@@ -5896,7 +5896,7 @@ section.left-small a {
   .introOn .help-overlay .hp-text-3 {
     top: 470px; }
   .introOn .help-overlay .help-arrow {
-    background: url("/si_scy/assets/help-arrow-e195cdd167043a172036382347681889.png") no-repeat top left;
+    background: url("http://scypho.screeninteraction.com//assets/help-arrow-e195cdd167043a172036382347681889.png") no-repeat top left;
     width: 50px;
     height: 120px;
     background-size: 100%;
@@ -5904,7 +5904,7 @@ section.left-small a {
     right: 40px;
     top: -40px; }
   .introOn .help-overlay .js-close-intro {
-    background: url("/si_scy/assets/help-button-9bb16483dbcc2519914309ca704319cc.png") no-repeat top center;
+    background: url("http://scypho.screeninteraction.com//assets/help-button-9bb16483dbcc2519914309ca704319cc.png") no-repeat top center;
     background-size: 100%;
     width: 200px;
     height: 120px;
@@ -5952,6 +5952,22 @@ section.left-small a {
     @media only screen and (min-width: 40.063em) {
       .introOn .help-overlay .close-info-text {
         top: 700px; } }
+
+#iframe-wrapper {
+  background: url("http://scypho.screeninteraction.com//assets/iframe-wrapper-3e9e183eb48d2e037ac573f8171353bb.jpg") no-repeat top center;
+  position: relative;
+  height: 980px; }
+  #iframe-wrapper .iframe-resp {
+    position: relative;
+    margin: 0 auto;
+    width: 360px;
+    height: 620px; }
+    #iframe-wrapper .iframe-resp iframe {
+      border: 0px #FFFFFF none;
+      margin-top: 164px;
+      width: 100%;
+      height: 100%;
+      margin-left: 10px; }
 
 #schedule .scy-col-8 {
   width: 60px; }

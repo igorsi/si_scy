@@ -25337,6 +25337,12 @@ $(function(){
 	  }
 	});
 
+	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		// $('#all-content').toggleClass('hidden');
+		$('.ember-view').toggleClass('hidden');
+		$('#iframe-wrapper').toggleClass('hidden');
+	}
+
 });
 //Prevent mobile browser from selecting the text
 $.fn.extend({
@@ -25378,12 +25384,17 @@ function dashboardActions() {
 	var heartDegree = $('#ideal-degree .icon-heart-empty');
 	$('.js-plus-temp').hammer().on('tap', function(e){
 		e.preventDefault();
-		console.log('plusss ');
 		idealTemp.html(parseFloat(idealTemp.html()) + 0.5).append(heartDegree);
+		var params = { temp: 0.5 };
+	    $.post( "http://termo.meteor.com/termo-up", params)
+	      .done(function( data ) {});
 	});
 	$('.js-minus-temp').hammer().on('tap', function(e){
 		e.preventDefault();
 		idealTemp.html(parseFloat(idealTemp.html()) - 0.5).append(heartDegree);
+		var params = { temp: 0.5 };
+	    $.post( "http://termo.meteor.com/termo-down", params)
+	      .done(function( data ) {});
 	});
 
 	$('.mode-switch > input[type="checkbox"]').on('change', function(e){
